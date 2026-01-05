@@ -3878,17 +3878,19 @@ After commands, explain: obstacles detected, clearance margins, goal inference, 
                 testRtspBtn.disabled = false;
             }
 
-            const contentDiv = document.getElementById('resultTextContent');
-            if (contentDiv) {
-                contentDiv.textContent = '';
-                contentDiv.innerHTML = '';
-            } else {
-                resultText.textContent = '';
-                resultText.innerHTML = '';
-            }
-            resultText.classList.remove('fade');
-            videoOverlay.textContent = '';
-            lastText = '';
+            // Preserve last analysis text when stopping
+            // Don't clear the results - user may want to review them
+            // const contentDiv = document.getElementById('resultTextContent');
+            // if (contentDiv) {
+            //     contentDiv.textContent = '';
+            //     contentDiv.innerHTML = '';
+            // } else {
+            //     resultText.textContent = '';
+            //     resultText.innerHTML = '';
+            // }
+            // resultText.classList.remove('fade');
+            // videoOverlay.textContent = '';
+            // lastText = '';
         }
 
         startBtn.addEventListener('click', start);
