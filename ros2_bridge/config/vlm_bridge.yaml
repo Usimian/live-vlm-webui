@@ -1,0 +1,28 @@
+/**:
+  ros__parameters:
+    # WebSocket connection
+    websocket_url: "wss://localhost:8090/ws"  # or "ws://localhost:8090/ws" for non-SSL
+
+    # Robot control topic
+    cmd_vel_topic: "/cmd_vel"
+
+    # Update rate (Hz)
+    update_rate: 10.0
+
+    # Safety limits
+    enable_safety_limits: true
+    max_linear_vel: 0.5  # m/s
+    max_angular_vel: 1.0  # rad/s
+
+    # Command timeout (seconds)
+    # Robot will decelerate if no new commands within this time
+    command_timeout: 2.0
+
+    # Deceleration time (seconds)
+    # Time to smoothly decelerate to stop when commands timeout
+    deceleration_time: 1.0
+
+    # Execution mode: "latest" or "sequence"
+    # - latest: Execute most recent command immediately (reactive)
+    # - sequence: Execute timestamped commands in order (planned trajectory)
+    execution_mode: "latest"
